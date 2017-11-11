@@ -12,21 +12,20 @@ default: &default
   adapter: sqlserver
   encoding: utf8
   database: default
-  username: sa
-  password: '8tnutri:Anu-P'
+  username: rails_playground
+  password: '<Yourstr0ngPassW0rd!>'
   host: localhost
-  port: 1401
 
 development:
   <<: *default
-  # database: painel_development
+  database: rails_playground_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: painel_test
+  database: rails_playground_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +48,6 @@ test:
 #
 production:
   <<: *default
-  database: painel_production
-  username: painel
-  password: <%= ENV['PAINEL_DATABASE_PASSWORD'] %>
+  database: rails_playground_production
+  username: rails_playground
+  password: <%= ENV['RAILS_PLAYGROUND_DATABASE_PASSWORD'] %>
